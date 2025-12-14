@@ -1,0 +1,232 @@
+:root{
+    --color-verde:#034C31; 
+}
+
+body {
+    font-family: 'Comic Sans MS',cursive;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background: url("/imagenes/pizarra2.jpg") white;
+    background-size: contain;
+    background-repeat: no-repeat; 
+    background-position: center;
+}
+
+h1{
+    font-size: 2.3em;
+    font-weight: bold;
+    color: var(--color-verde);
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.contenedor {
+    display: flex;
+    align-items: center;
+}
+
+.canvas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 68px;
+    margin-top: 48px;
+    margin-right: 8px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid #ddd; 
+    border-radius: 10px;
+    padding: 20px;
+    height: 60vh;
+    overflow: visible;
+}
+
+.canvas2 {
+    margin: 50px;
+    margin: auto;
+    border: 2px solid #000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    cursor: url("/imagenes/rotu.png") 0 100, pointer;
+}
+
+/* Los colores ocupen TODO el ancho y no se corten */
+.colores-contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: center;
+
+    width: 100%;
+    padding: 6px 10px;
+    box-sizing: border-box;
+    overflow: visible;
+}
+
+.color {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #424242; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #fff; 
+    margin-top: 5px;
+
+    position: relative;
+    z-index: 5;
+    flex: 0 0 auto;
+}
+
+.picker{
+    margin: 15px;
+    position: relative;
+    z-index: 6; 
+}
+
+/*****************ESTILOS PANEL*************************************************************/
+.panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #333;
+    width: 72px;
+    height: 450px; 
+}
+
+/* Estilos para el contenedor de los botones de grosor */
+.tamaños {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+/* Estilos para los botones de grosor */
+.tamaño {
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 50px;
+    margin-bottom: 10px;
+}
+
+.tamaño.tamaño1 {
+    height: 5px;
+    background-color:#000;
+}
+
+.tamaño.tamaño2 {
+    height: 10px;
+    background-color:#000;
+}
+
+.tamaño.tamaño3 {
+    height: 15px;
+    background-color:#000;
+    margin-bottom: 22px;
+}
+
+.borrar {
+    background: linear-gradient(to right, #475FBD 34%, #C45A65 35%);
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    padding: 8px 13px;
+    color: #fff;
+    font-weight: bold;
+    transition: background 0.3s;
+    cursor: url("/imagenes/goma.png") 0 100, pointer;
+    cursor: pointer;
+    margin-bottom: 22px;
+}
+
+.borrar:hover {
+    background: linear-gradient(to right, #C45A65 34%, #475FBD 35%);
+}
+
+.textoInput {
+    padding: 10px;
+    width: 60px; 
+    border: 2px solid var(--color-verde);
+    border-radius: 20px; 
+    font-size: 16px;
+    outline: none; 
+    transition: border-color 0.3s ease; 
+    margin-bottom: 5px;
+    margin-top: 15px;
+}
+
+.textoInput:focus {
+    border-color: #ccc;
+}
+
+.addTexto{
+    margin-bottom: 18px;
+}
+
+/*********ANIMACIÓN LOGO*****************************************************************************/
+.icono{
+    animation: bounce 0.6s infinite alternate; 
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-5px); }
+}
+
+/************* FILE UPLOAD  **************************/
+.file-upload{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 8px;
+}
+
+/* Ocultar el input real para que NO salga "Seleccionar archivo..." */
+#file-input{
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+/* El icono hace de botón */
+.file-btn{
+    display: grid;
+    place-items: center;
+    width: 54px;
+    height: 54px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease;
+    background-color: rgba(255,255,255,0.35);
+}
+
+.file-btn:hover{
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+    background-color: rgba(255,255,255,0.55);
+}
+
+.file-btn:active{
+    transform: translateY(0);
+}
+
+/* Texto del archivo  */
+.file-name{
+    max-width: 68px; 
+    text-align: center;
+    font-size: 11px;
+    color: var(--color-verde);
+    opacity: 0.9;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

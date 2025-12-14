@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigiDraw</title>
+    
+    <link rel="stylesheet" href="/css/pizarra.css">
+
+    <link rel="icon" type="image/png" href="/imagenes/pincel.png"/>
+    
+    <script src="/Js/pizarra.js"></script>
+   
+</head>
+
+<body>
+    <h1>DigiDraw <img src="imagenes/pincel2.png" class="icono" width="45" height="45"></h1>
+    <div class="contenedor">
+        
+        <div class="canvas">
+            <canvas class="canvas2" width="650" height="500"></canvas>
+            
+            <div class="colores-contenedor">
+                <!-- Contenido de colores -->
+                
+                <input type="color" id="colorPicker" class="picker"> <!-- Seleccionador de color -->
+            </div>
+            
+        </div>
+        
+        <div class="panel">
+            
+            <div class="tamaños">
+                <input type="button" class="tamaño tamaño1" id="tamaño1">
+                <input type="button" class="tamaño tamaño2" id="tamaño2">
+                <input type="button" class="tamaño tamaño3" id="tamaño3">
+            </div>
+            
+            <input type="button" class="borrar" id="borrar" value="Borrar">
+
+            <div class="file-upload">
+                <label for="file-input" class="file-btn" title="Añadir imagen">
+                    <img src="/imagenes/imagen.png" class="imagen" alt="Añadir imagen">
+                </label>
+            
+                <input type="file" id="file-input" accept="image/*">
+            
+                <small id="file-name" class="file-name">Sin archivo</small>
+            </div>
+                                                         
+            <input type="text" class="textoInput">
+            <img src="/imagenes/texto.png" alt="texto" class="addTexto">
+            
+
+            <label class="papelera" id="borrarTodo">
+                <img src="/imagenes/papelera.png" alt="Papelera">
+            </label>
+
+            <canvas id="canvas" width="400" height="400"></canvas>
+        </div>
+
+    </div>
+</body>
+
+</html>
