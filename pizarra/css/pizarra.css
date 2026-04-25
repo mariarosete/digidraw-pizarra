@@ -240,9 +240,9 @@ h1{
     body {
         min-height: 100vh;
         height: auto;
-        background-size: contain;
-        background-repeat: no-repeat;
+        background-size: cover;
         background-position: center top;
+        background-repeat: no-repeat;
         background-color: white;
         overflow-x: hidden;
         padding: 0;
