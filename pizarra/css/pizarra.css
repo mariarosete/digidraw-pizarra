@@ -230,3 +230,147 @@ h1{
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+
+
+/* ========================= */
+/* RESPONSIVE MÓVIL PIZARRA */
+/* ========================= */
+
+@media (max-width: 768px) {
+    body {
+        min-height: 100vh;
+        height: auto;
+        overflow-x: hidden;
+        background-size: cover;
+        background-position: center;
+        padding: 0 10px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+        margin: 15px 0 10px;
+    }
+
+    .contenedor {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 12px;
+    }
+
+    .canvas {
+        width: 92%;
+        max-width: 360px;
+        height: auto;
+        margin: 10px auto 0;
+        padding: 12px;
+    }
+
+    .canvas2 {
+        width: 300px;
+        height: 230px;
+        margin: 0 auto;
+    }
+
+    .colores-contenedor {
+        gap: 6px;
+        padding: 8px 4px;
+    }
+
+    .color {
+        width: 32px;
+        height: 32px;
+        margin-top: 4px;
+    }
+
+    .picker {
+        width: 32px;
+        height: 32px;
+        margin: 4px;
+    }
+
+    .panel {
+        width: 92%;
+        max-width: 360px;
+        height: auto;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+
+    .tamaños {
+        flex-direction: row;
+        margin-top: 0;
+        gap: 8px;
+    }
+
+    .tamaño {
+        width: 40px;
+        margin-bottom: 0;
+    }
+
+    .tamaño.tamaño3 {
+        margin-bottom: 0;
+    }
+
+    .borrar {
+        margin-bottom: 0;
+        font-size: 13px;
+        padding: 7px 10px;
+    }
+
+    .textoInput {
+        width: 70px;
+        padding: 8px;
+        font-size: 14px;
+        margin: 0;
+    }
+
+    .addTexto {
+        margin-bottom: 0;
+    }
+
+    .file-upload {
+        margin-bottom: 0;
+    }
+
+    .file-btn {
+        width: 42px;
+        height: 42px;
+    }
+
+    .file-name {
+        max-width: 60px;
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.55em;
+    }
+
+    .canvas {
+        max-width: 320px;
+        padding: 10px;
+    }
+
+    .canvas2 {
+        width: 270px;
+        height: 210px;
+    }
+
+    .panel {
+        max-width: 320px;
+        gap: 8px;
+    }
+
+    .color {
+        width: 28px;
+        height: 28px;
+    }
+}
