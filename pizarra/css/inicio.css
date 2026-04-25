@@ -74,3 +74,71 @@ h1{
         transform: translateY(-5px);
     }
 }
+
+/* ========================= */
+/* RESPONSIVE MÓVIL INICIO */
+/* ========================= */
+
+@media (max-width: 768px) {
+    body {
+        min-height: 100vh;
+        height: auto;
+        background-size: cover;
+        background-position: center;
+        overflow-x: hidden;
+        padding: 0 12px;
+    }
+
+    .inicio {
+        position: relative;
+        width: 90%;
+        max-width: 340px;
+        height: auto;
+        min-height: auto;
+        margin: 140px auto 0;
+        padding: 22px 18px;
+        font-size: 0.9rem;
+        line-height: 1.35rem;
+        border-radius: 12px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+        line-height: 1.2;
+    }
+
+    .boton-div {
+        height: auto;
+        margin-top: 22px;
+    }
+
+    .boton {
+        font-size: 16px;
+        padding: 12px 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .inicio {
+        margin-top: 115px;
+        width: 92%;
+        padding: 20px 16px;
+        font-size: 0.82rem;
+        line-height: 1.25rem;
+    }
+
+    h1 {
+        font-size: 1.55em;
+    }
+
+    .boton {
+        font-size: 15px;
+        padding: 11px 22px;
+    }
+}
+
+
+
+
+
+
