@@ -4,7 +4,6 @@ window.onload = function () {
     let color;
     let comienzaTrazo = false;
 
-    // Usar SIEMPRE el canvas principal (.canvas2) para todo
     const canvas = document.querySelector('.canvas2');
     const lienzo = canvas; 
     const ctx = canvas.getContext('2d');
@@ -13,67 +12,58 @@ window.onload = function () {
 
     const colores = ["#FF0000", "#00FF00", "#0000FF", "#FFFF00", "#FF00FF", "#00FFFF", "#FEA6CB", "#FFA500"];
 
-    // restaurar modo normal 
     function restaurarDibujoNormal() {
         ctx.globalCompositeOperation = "source-over";
         ctx.lineWidth = grosorInicial;
         lienzo.style.cursor = "url('/imagenes/rotu.png') 0 100, pointer";
     }
 
-    // Seleccionador de color
+    // Color picker
     const colorPicker = document.getElementById('colorPicker');
     colorPicker.addEventListener('input', function (event) {
         color = event.target.value;
-        restaurarDibujoNormal();      // salir del modo goma si estaba activo
+        restaurarDibujoNormal();
         ctx.strokeStyle = color;
     });
 
-    // Eventos para tamaños del grosor
-    const tamaño1 = document.querySelector(".tamaño1");
-    const tamaño2 = document.querySelector(".tamaño2");
-    const tamaño3 = document.querySelector(".tamaño3");
+    // Tamaños
+    document.querySelector(".tamaño1").addEventListener("click", () => ctx.lineWidth = grosorInicial = 5);
+    document.querySelector(".tamaño2").addEventListener("click", () => ctx.lineWidth = grosorInicial = 10);
+    document.querySelector(".tamaño3").addEventListener("click", () => ctx.lineWidth = grosorInicial = 15);
 
-    tamaño1.addEventListener("click", cambiarTamaño1);
-    tamaño2.addEventListener("click", cambiarTamaño2);
-    tamaño3.addEventListener("click", cambiarTamaño3);
+    // Goma
+    document.querySelector(".borrar").addEventListener("click", function () {
+        ctx.globalCompositeOperation = "destination-out";
+        ctx.lineWidth = 40;
+        lienzo.style.cursor = "url('/imagenes/goma.png') 0 100, pointer";
+    });
 
-    // Evento para la goma
-    const borrar = document.querySelector(".borrar");
-    borrar.addEventListener("click", activarBorrador);
+    // Borrar todo
+    document.querySelector(".papelera").addEventListener("click", function () {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        restaurarDibujoNormal();
+    });
 
-    // Evento para borrar todo
-    const borrarTodo = document.querySelector(".papelera");
-    borrarTodo.addEventListener("click", borrarCanvas);
-
-    // Pintar colores
+    // Colores
     for (let c of colores) {
-        let divsColores = document.createElement("div");
-        divsColores.classList = 'color';
-        divsColores.id = c;
-        divsColores.style.backgroundColor = c;
+        let div = document.createElement("div");
+        div.classList = 'color';
+        div.id = c;
+        div.style.backgroundColor = c;
 
-        divsColores.addEventListener('click', function (event) {
-            cambiarColor(event);
+        div.addEventListener('click', function (event) {
+            color = event.target.id;
+            restaurarDibujoNormal();
+            ctx.strokeStyle = color;
         });
 
-        document.querySelector('.colores-contenedor').append(divsColores);
+        document.querySelector('.colores-contenedor').append(div);
     }
 
-    function cambiarColor(event) {
-        color = event.target.id;
-        restaurarDibujoNormal();    // salir del modo goma
-        ctx.strokeStyle = color;
-    }
-
-    /*************** Eventos ratón ***************/
-       /*************** Eventos ratón y táctil ***************/
+    /*************** RATÓN  ***************/
     lienzo.addEventListener('mousedown', pulsaRaton);
     lienzo.addEventListener('mousemove', mueveRaton);
     document.addEventListener('mouseup', levantaRaton);
-
-    lienzo.addEventListener('touchstart', pulsaTouch, { passive: false });
-    lienzo.addEventListener('touchmove', mueveTouch, { passive: false });
-    document.addEventListener('touchend', levantaRaton);
 
     function pulsaRaton(event) {
         comienzaTrazo = true;
@@ -87,48 +77,46 @@ window.onload = function () {
         ctx.stroke();
     }
 
-    function obtenerPosicionTouch(event) {
-        event.preventDefault();
-
-        const rect = lienzo.getBoundingClientRect();
-        const touch = event.touches[0];
-
-        return {
-            x: (touch.clientX - rect.left) * (lienzo.width / rect.width),
-            y: (touch.clientY - rect.top) * (lienzo.height / rect.height)
-        };
-    }
-
-    function pulsaTouch(event) {
-        const pos = obtenerPosicionTouch(event);
-
-        comienzaTrazo = true;
-        ctx.beginPath();
-        ctx.moveTo(pos.x, pos.y);
-    }
-
-    function mueveTouch(event) {
-        if (!comienzaTrazo) return;
-
-        const pos = obtenerPosicionTouch(event);
-
-        ctx.lineTo(pos.x, pos.y);
-        ctx.stroke();
-    }
-
     function levantaRaton() {
         ctx.closePath();
         comienzaTrazo = false;
     }
-    /********** Goma **********/
-    function activarBorrador() {
-        // NO machacamos grosorInicial, solo cambiamos el estado de borrado
-        ctx.globalCompositeOperation = "destination-out";
-        ctx.lineWidth = 40;
-        lienzo.style.cursor = "url('/imagenes/goma.png') 0 100, pointer";
-    }
 
-    /******************** Seleccionar imagen ********************/
+    /*************** MÓVIL***************/
+    lienzo.addEventListener('touchstart', function (e) {
+        e.preventDefault();
+        const rect = lienzo.getBoundingClientRect();
+        const touch = e.touches[0];
+
+        comienzaTrazo = true;
+        ctx.beginPath();
+        ctx.moveTo(
+            (touch.clientX - rect.left) * (canvas.width / rect.width),
+            (touch.clientY - rect.top) * (canvas.height / rect.height)
+        );
+    });
+
+    lienzo.addEventListener('touchmove', function (e) {
+        if (!comienzaTrazo) return;
+        e.preventDefault();
+
+        const rect = lienzo.getBoundingClientRect();
+        const touch = e.touches[0];
+
+        ctx.lineTo(
+            (touch.clientX - rect.left) * (canvas.width / rect.width),
+            (touch.clientY - rect.top) * (canvas.height / rect.height)
+        );
+
+        ctx.stroke();
+    });
+
+    document.addEventListener('touchend', function () {
+        comienzaTrazo = false;
+        ctx.closePath();
+    });
+
+    /*************** IMAGEN ***************/
     const imagenSeleccionada = document.getElementById('file-input');
     const fileNameEl = document.getElementById("file-name");
 
@@ -147,7 +135,7 @@ window.onload = function () {
             img.src = e.target.result;
 
             img.onload = function () {
-                restaurarDibujoNormal(); // volver a modo normal antes de dibujar imagen
+                restaurarDibujoNormal();
                 ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
             };
         };
@@ -155,30 +143,18 @@ window.onload = function () {
         reader.readAsDataURL(file);
     });
 
-    /********************** Insertar texto **********************/
-    document.querySelector('.addTexto').addEventListener('click', agregarTexto);
-
-    function agregarTexto() {
+    /*************** TEXTO ***************/
+    document.querySelector('.addTexto').addEventListener('click', function () {
         const text = document.querySelector('.textoInput').value;
         if (!text) return;
 
-        restaurarDibujoNormal(); // volver a modo normal antes del texto
-
-        const x = canvas.width / 2;
-        const y = canvas.height / 2;
+        restaurarDibujoNormal();
 
         ctx.font = '40px Comic Sans MS';
         ctx.fillStyle = 'black';
         ctx.textAlign = 'center';
 
-        ctx.fillText(text, x, y);
-    }
+        ctx.fillText(text, canvas.width / 2, canvas.height / 2);
+    });
 
-    /***** Borrar todo *****/
-    function borrarCanvas() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-        // Al borrar todo, deja el canvas listo para seguir trabajando
-        restaurarDibujoNormal();
-    }
 };
