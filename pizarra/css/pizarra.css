@@ -236,11 +236,10 @@ h1{
 /* ========================= */
 /* RESPONSIVE MÓVIL PIZARRA */
 /* ========================= */
-
 @media (max-width: 768px) {
     body {
-        height: auto;
         min-height: 100vh;
+        height: auto;
         background-size: cover;
         background-position: center;
         overflow-x: hidden;
@@ -248,7 +247,7 @@ h1{
     }
 
     h1 {
-        font-size: 1.7em;
+        font-size: 1.8em;
         margin: 18px 0 10px;
     }
 
@@ -256,11 +255,11 @@ h1{
         width: 100%;
         flex-direction: column;
         align-items: center;
-        gap: 14px;
+        gap: 12px;
     }
 
     .canvas {
-        width: 90%;
+        width: 92%;
         max-width: 360px;
         height: auto;
         margin: 0 auto;
@@ -269,11 +268,15 @@ h1{
 
     .canvas2 {
         width: 300px;
-        height: 240px;
+        height: 230px;
         touch-action: none;
+        display: block;
     }
 
     .colores-contenedor {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         gap: 8px;
         padding: 10px 4px;
     }
@@ -282,27 +285,34 @@ h1{
     .picker {
         width: 34px;
         height: 34px;
+        margin: 3px;
     }
 
     .panel {
-        width: 90%;
+        width: 92%;
         max-width: 360px;
         height: auto;
-        flex-direction: row;
-        flex-wrap: wrap;
+        margin: 0 auto 20px;
+        padding: 12px;
+        display: grid;
+        grid-template-columns: repeat(3, auto);
         justify-content: center;
+        align-items: center;
         gap: 12px;
-        margin-bottom: 20px;
     }
 
     .tamaños {
+        grid-column: 1 / -1;
+        display: flex;
         flex-direction: row;
-        gap: 8px;
+        justify-content: center;
+        gap: 12px;
         margin: 0;
     }
 
     .tamaño {
-        margin-bottom: 0;
+        width: 45px;
+        margin: 0;
     }
 
     .tamaño.tamaño3 {
@@ -311,6 +321,27 @@ h1{
 
     .borrar,
     .addTexto {
-        margin-bottom: 0;
+        margin: 0;
+    }
+
+    .textoInput {
+        width: 90px;
+        margin: 0;
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .file-upload {
+        margin: 0;
+    }
+
+    .file-btn {
+        width: 48px;
+        height: 48px;
+    }
+
+    .file-name {
+        max-width: 60px;
+        font-size: 10px;
     }
 }
