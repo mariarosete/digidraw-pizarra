@@ -66,9 +66,14 @@ window.onload = function () {
     }
 
     /*************** Eventos ratón ***************/
+       /*************** Eventos ratón y táctil ***************/
     lienzo.addEventListener('mousedown', pulsaRaton);
     lienzo.addEventListener('mousemove', mueveRaton);
     document.addEventListener('mouseup', levantaRaton);
+
+    lienzo.addEventListener('touchstart', pulsaTouch, { passive: false });
+    lienzo.addEventListener('touchmove', mueveTouch, { passive: false });
+    document.addEventListener('touchend', levantaRaton);
 
     function pulsaRaton(event) {
         comienzaTrazo = true;
@@ -82,27 +87,39 @@ window.onload = function () {
         ctx.stroke();
     }
 
+    function obtenerPosicionTouch(event) {
+        event.preventDefault();
+
+        const rect = lienzo.getBoundingClientRect();
+        const touch = event.touches[0];
+
+        return {
+            x: (touch.clientX - rect.left) * (lienzo.width / rect.width),
+            y: (touch.clientY - rect.top) * (lienzo.height / rect.height)
+        };
+    }
+
+    function pulsaTouch(event) {
+        const pos = obtenerPosicionTouch(event);
+
+        comienzaTrazo = true;
+        ctx.beginPath();
+        ctx.moveTo(pos.x, pos.y);
+    }
+
+    function mueveTouch(event) {
+        if (!comienzaTrazo) return;
+
+        const pos = obtenerPosicionTouch(event);
+
+        ctx.lineTo(pos.x, pos.y);
+        ctx.stroke();
+    }
+
     function levantaRaton() {
         ctx.closePath();
         comienzaTrazo = false;
     }
-
-    /********** Cambiar grosor **********/
-    function cambiarTamaño1() {
-        grosorInicial = 5;
-        ctx.lineWidth = grosorInicial;
-    }
-
-    function cambiarTamaño2() {
-        grosorInicial = 10;
-        ctx.lineWidth = grosorInicial;
-    }
-
-    function cambiarTamaño3() {
-        grosorInicial = 15;
-        ctx.lineWidth = grosorInicial;
-    }
-
     /********** Goma **********/
     function activarBorrador() {
         // NO machacamos grosorInicial, solo cambiamos el estado de borrado
