@@ -288,60 +288,64 @@ h1{
         margin: 3px;
     }
 
-    .panel {
-        width: 92%;
-        max-width: 360px;
-        height: auto;
-        margin: 0 auto 20px;
-        padding: 12px;
-        display: grid;
-        grid-template-columns: repeat(3, auto);
-        justify-content: center;
-        align-items: center;
-        gap: 12px;
-    }
+   .panel {
+    width: 92%;
+    max-width: 360px;
+    height: auto;
+    margin: 0 auto 20px;
+    padding: 12px;
 
-    .tamaños {
-        grid-column: 1 / -1;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        gap: 12px;
-        margin: 0;
-    }
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
 
-    .tamaño {
-        width: 45px;
-        margin: 0;
-    }
+.tamaños {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 14px;
+    margin: 0;
+}
 
-    .tamaño.tamaño3 {
-        margin-bottom: 0;
-    }
+.tamaño {
+    width: 48px;
+    margin: 0;
+}
 
-    .borrar,
-    .addTexto {
-        margin: 0;
-    }
+.tamaño.tamaño3 {
+    margin-bottom: 0;
+}
 
-    .textoInput {
-        width: 90px;
-        margin: 0;
-        padding: 8px;
-        font-size: 14px;
-    }
+.file-upload,
+.borrar,
+.textoInput,
+.addTexto,
+.papelera {
+    margin: 0;
+    position: static;
+}
 
-    .file-upload {
-        margin: 0;
-    }
+.borrar {
+    font-size: 14px;
+    padding: 8px 12px;
+}
 
-    .file-btn {
-        width: 48px;
-        height: 48px;
-    }
+.textoInput {
+    width: 95px;
+    padding: 8px;
+    font-size: 14px;
+}
 
-    .file-name {
-        max-width: 60px;
-        font-size: 10px;
-    }
+.file-btn {
+    width: 52px;
+    height: 52px;
+}
+
+.file-name {
+    max-width: 70px;
+    font-size: 10px;
 }
