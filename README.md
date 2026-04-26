@@ -89,15 +89,19 @@ DigiDraw es una **pizarra digital** que permite dibujar a mano alzada, cambiar c
 
 ---
 
-## 💻 Cómo ejecutar el proyecto
+## 🌐 Aplicación en funcionamiento
 
-1. Clona el repositorio:
-   ```bash
-   git clone https://github.com/mariarosete/digidraw-pizarra.git
-   ```
-2. Abre el archivo index.html en tu navegador (o usa Live Server en VS Code).
+Puedes probar la pizarra digital directamente en tu navegador:
 
-3. ¡Empieza a dibujar! 🎉
+👉 https://digidraw-app.vercel.app/
+
+📱💻 Aplicación responsive, compatible con móvil y escritorio.
+
+---
+
+## 🎥 Demo en vídeo
+
+[Ver demo en vídeo](https://mariarosete.vercel.app/pizarra.mp4)
 
 ---
 
