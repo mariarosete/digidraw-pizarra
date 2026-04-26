@@ -2,10 +2,7 @@
 
 ![Banner DigiDraw](https://github.com/mariarosete/digidraw-pizarra/blob/main/screenshots/pizarra.png?raw=true)
 
-Proyecto frontend desarrollado con **HTML, CSS y JavaScript (Vanilla)**, centrado en el uso de **Canvas**, dibujo interactivo, manipulación de imágenes y texto, y una experiencia de usuario visual e intuitiva.
-
-DigiDraw es una **pizarra digital** que permite dibujar a mano alzada, cambiar colores y grosores, borrar, insertar imágenes y añadir texto directamente sobre el lienzo.
-
+Aplicación web de dibujo desarrollada con Canvas API y JavaScript, que implementa funcionalidades de trazo libre, borrado, inserción de imágenes y texto mediante manipulación directa del lienzo.
 ---
 ## 🌐 Aplicación en funcionamiento
 
@@ -16,10 +13,11 @@ Puedes probar la pizarra digital directamente en tu navegador:
 📱💻 Aplicación responsive, compatible con móvil y escritorio.
 
 ---
-
 ## 🎥 Demo en vídeo
 
-[Ver demo en vídeo](https://mariarosete.vercel.app/pizarra.mp4)
+Puedes ver el funcionamiento de la aplicación aquí:
+
+👉 https://mariarosete.vercel.app/pizarra.mp4
 
 ---
 
