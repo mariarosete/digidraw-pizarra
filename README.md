@@ -7,6 +7,21 @@ Proyecto frontend desarrollado con **HTML, CSS y JavaScript (Vanilla)**, centrad
 DigiDraw es una **pizarra digital** que permite dibujar a mano alzada, cambiar colores y grosores, borrar, insertar imágenes y añadir texto directamente sobre el lienzo.
 
 ---
+## 🌐 Aplicación en funcionamiento
+
+Puedes probar la pizarra digital directamente en tu navegador:
+
+👉 https://digidraw-app.vercel.app/
+
+📱💻 Aplicación responsive, compatible con móvil y escritorio.
+
+---
+
+## 🎥 Demo en vídeo
+
+[Ver demo en vídeo](https://mariarosete.vercel.app/pizarra.mp4)
+
+---
 
 ## ✨ Características principales
 
@@ -89,21 +104,6 @@ DigiDraw es una **pizarra digital** que permite dibujar a mano alzada, cambiar c
 
 ---
 
-## 🌐 Aplicación en funcionamiento
-
-Puedes probar la pizarra digital directamente en tu navegador:
-
-👉 https://digidraw-app.vercel.app/
-
-📱💻 Aplicación responsive, compatible con móvil y escritorio.
-
----
-
-## 🎥 Demo en vídeo
-
-[Ver demo en vídeo](https://mariarosete.vercel.app/pizarra.mp4)
-
----
 
 ## 📩 Contacto
 
