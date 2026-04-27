@@ -20,68 +20,6 @@ Puedes ver el funcionamiento de la aplicación aquí:
 👉 https://mariarosete.vercel.app/pizarra.mp4
 
 ---
-
-## ✨ Características principales
-
-## 🎨 Pizarra digital con Canvas
-
-### ✏️ Dibujo a mano alzada
-- Dibujo libre sobre el lienzo usando el ratón.
-- Cursor personalizado tipo **rotulador**.
-- Trazado fluido mediante eventos de ratón.
-
-### 🎚️ Control de grosor
-- Tres niveles de grosor del rotulador:
-  - Fino
-  - Medio
-  - Grueso
-- Cambio inmediato sin recargar la aplicación.
-
-### 🌈 Selección de color
-- Paleta de colores predefinida.
-- Selector de color (`input type="color"`) para elegir cualquier tono.
-- Cambio dinámico del color del trazo.
-
----
-
-## 🧽 Herramientas de borrado
-
-### 🧼 Goma de borrar
-- Modo borrador mediante `globalCompositeOperation`.
-- Cursor personalizado tipo **goma**.
-- Grosor específico para un borrado cómodo.
-
-### 🗑️ Borrar todo
-- Limpieza completa del lienzo con un solo clic.
-- No requiere refrescar la página.
-
----
-
-## 🖼️ Inserción de contenido
-
-### 📷 Insertar imágenes
-- Carga de imágenes desde el equipo mediante **FileReader**.
-- Dibujo de la imagen directamente sobre el canvas.
-- Visualización del nombre del archivo de forma discreta (sin invadir la pizarra).
-
-### 📝 Insertar texto
-- Campo para escribir texto personalizado.
-- Inserción centrada en el lienzo.
-- Tipografía Comic Sans MS para un estilo infantil/educativo.
-
----
-
-## 🎨 Diseño y experiencia de usuario
-
-- Interfaz clara y visual.
-- Fondo temático tipo pizarra.
-- Panel lateral con iconos intuitivos.
-- Feedback visual inmediato en cada acción.
-- Uso de animaciones suaves para mejorar la experiencia.
-- Diseño pensado para uso educativo e infantil.
-
----
-
 ## 🛠️ Tecnologías utilizadas
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
@@ -91,14 +29,33 @@ Puedes ver el funcionamiento de la aplicación aquí:
 
 ---
 
-## 🚀 Objetivo del proyecto
+## 🚀 Funcionalidades
 
-- Practicar **JavaScript Vanilla** sin frameworks.
-- Trabajar con el **Canvas API**.
-- Gestionar eventos de ratón para dibujo interactivo.
-- Manipular imágenes y texto sobre el lienzo.
-- Diseñar una interfaz intuitiva y funcional.
-- Desarrollar un proyecto completo, usable y bien estructurado.
+- ✏️ Dibujo libre sobre canvas  
+- 🎚️ Control de grosor del trazo  
+- 🌈 Selección dinámica de color  
+- 🧽 Herramienta de borrado y limpieza completa  
+- 🖼️ Inserción de imágenes desde el dispositivo  
+- 📝 Inserción de texto en el lienzo  
+
+---
+
+## 🧠 Aspectos técnicos
+
+- Uso de **Canvas API**  
+- Gestión de eventos de ratón  
+- Manipulación dinámica del lienzo  
+- Uso de `globalCompositeOperation` para borrado  
+- Lectura de archivos con **FileReader**  
+
+---
+
+## 🎯 Objetivo
+
+- Practicar **JavaScript Vanilla**  
+- Trabajar con **Canvas API**  
+- Gestionar interacción del usuario en tiempo real  
+- Desarrollar una interfaz usable y dinámica  
 
 ---
 
