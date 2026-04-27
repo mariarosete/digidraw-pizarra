@@ -1,8 +1,9 @@
-# 🖍️ DigiDraw – Pizarra Digital con Canvas (HTML · CSS · JavaScript)
+# 🖍️ DigiDraw – Pizarra Digital con Canvas
 
 ![Banner DigiDraw](https://github.com/mariarosete/digidraw-pizarra/blob/main/screenshots/pizarra.png?raw=true)
 
-Aplicación web de dibujo desarrollada con Canvas API y JavaScript, que implementa funcionalidades de trazo libre, borrado, inserción de imágenes y texto mediante manipulación directa del lienzo.
+Aplicación web de dibujo desarrollada con **Canvas API y JavaScript**, que permite dibujar, borrar e insertar contenido directamente sobre el lienzo.
+
 ---
 ## 🌐 Aplicación en funcionamiento
 
