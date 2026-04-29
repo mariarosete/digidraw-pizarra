@@ -32,12 +32,12 @@ Puedes ver el funcionamiento de la aplicación aquí:
 
 ## 🚀 Funcionalidades
 
-- ✏️ Dibujo libre sobre canvas  
-- 🎚️ Control de grosor del trazo  
-- 🌈 Selección dinámica de color  
-- 🧽 Herramienta de borrado y limpieza completa  
-- 🖼️ Inserción de imágenes desde el dispositivo  
-- 📝 Inserción de texto en el lienzo  
+-  Dibujo libre sobre canvas  
+-  Control de grosor del trazo  
+-  Selección dinámica de color  
+-  Herramienta de borrado y limpieza completa  
+-  Inserción de imágenes desde el dispositivo  
+-  Inserción de texto en el lienzo  
 
 ---
 
