@@ -30,7 +30,7 @@ Puedes ver el funcionamiento de la aplicación aquí:
 
 ---
 
-## 🚀 Funcionalidades
+## Funcionalidades
 
 -  Dibujo libre sobre canvas  
 -  Control de grosor del trazo  
@@ -41,7 +41,7 @@ Puedes ver el funcionamiento de la aplicación aquí:
 
 ---
 
-## 🧠 Aspectos técnicos
+## Aspectos técnicos
 
 - Uso de **Canvas API**  
 - Gestión de eventos de ratón  
@@ -51,7 +51,7 @@ Puedes ver el funcionamiento de la aplicación aquí:
 
 ---
 
-## 🎯 Objetivo
+## Objetivo
 
 - Practicar **JavaScript Vanilla**  
 - Trabajar con **Canvas API**  
